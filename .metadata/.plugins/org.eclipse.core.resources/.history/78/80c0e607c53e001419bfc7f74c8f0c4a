@@ -19,7 +19,7 @@ public class GPACalculator {
 		Scanner console = new Scanner(System.in);
 		
 		//obtain values
-		System.out.println("This program computes" + " a student's GPA.");
+		System.out.println("This program computes" + "a student's GPA.");
 		System.out.println("Class 1 Credit Value: ");
 		int credit1 =console.nextInt();
 		System.out.println("Class 2 Credit Value: ");
@@ -45,17 +45,16 @@ public class GPACalculator {
 		double GradePoint4 = credit4 * grade4;
 
 		
-		double GPA= TotalGPandCredit(GradePoint1 , GradePoint2 , GradePoint3 , GradePoint4 , credit1 , credit2 , credit3 , credit4);       
+		TotalGPandCredit(GradePoint1 , GradePoint2 , GradePoint3 , GradePoint4 , credit1 , credit2 , credit3 , credit4);       
 		
-		System.out.println("GPA = " + GPA);
 		
 	} // end main
 	
-	public static double TotalGPandCredit(double GradePoint1 , double GradePoint2 , double GradePoint3 , double GradePoint4 , int Credit1 , int Credit2 , int Credit3 , int Credit4) {
+	public static void TotalGPandCredit(double GradePoint1 , double GradePoint2 , double GradePoint3 , double GradePoint4 , int Credit1 , int Credit2 , int Credit3 , int Credit4) {
 		double TotalGP = GradePoint1 + GradePoint2 + GradePoint3 + GradePoint4;
 		double TotalCredit = Credit1 + Credit2 + Credit3 + Credit4;
 		// Divide total credits into total grade points to get GPA
-		return TotalGP/TotalCredit;
+		System.out.println("GPA = " + TotalGP / TotalCredit);
 	} // end method
 	
 	

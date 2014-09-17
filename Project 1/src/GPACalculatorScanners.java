@@ -9,7 +9,7 @@
 
 import java.util.*; //for scanner
 
-public class GPACalculator {
+public class GPACalculatorScanners {
 
 	/**
 	 * @param args
