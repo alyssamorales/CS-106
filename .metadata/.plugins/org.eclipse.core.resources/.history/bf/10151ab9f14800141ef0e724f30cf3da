@@ -175,8 +175,8 @@ public class ScandalQuestionaire {
 		System.out.println();
 		
 		
-	//Self explanatory... This gets the results.
-	getResults( oliviapope,  abbywhelan,  huck,  harrisonwright);
+		//Self explanatory... This gets the results.
+		getResults( oliviapope,  abbywhelan,  huck,  harrisonwright);
 		
 
 	}
