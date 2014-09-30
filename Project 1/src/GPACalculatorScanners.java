@@ -14,6 +14,9 @@ public class GPACalculatorScanners {
 	/**
 	 * @param args
 	 */
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner console = new Scanner(System.in);

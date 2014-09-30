@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+
+import java.util.*; //for scanner
+
+/**
+ * @author amorales
+ *
+ */
+public class ScandalQuestionaire {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner console = new Scanner (System.in);
+		
+		System.out.print("Find out what Scandal character ");
+		System.out.println("you are similar to!");
+		
+		System.out.println("How do you react to critism?");
+		System.out.println("How important is your career versus you relationships?");
+		System.out.println("How do you deal with other people?");
+		System.out.println("What are you talented in?");
+	}
+
+}
