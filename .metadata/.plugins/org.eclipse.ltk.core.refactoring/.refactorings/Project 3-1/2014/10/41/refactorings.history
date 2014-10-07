@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Project 3/src/HackProof.java&apos; to &apos;HackProof1.java&apos;" description="Rename resource &apos;HackProof.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/HackProof.java" name="HackProof1.java" stamp="1412696184043" updateReferences="true"/>
+</session>
