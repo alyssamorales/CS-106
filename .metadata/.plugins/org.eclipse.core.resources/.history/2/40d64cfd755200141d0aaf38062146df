@@ -1,0 +1,60 @@
+/**
+ * 
+ */
+import java.io.*;
+import java.util.*;
+
+/**
+ * @author amorales
+ *
+ */
+public class FileLookahead {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) 
+			throws FileNotFoundException {
+		Scanner input = new Scanner (new File("src/input.txt"));
+		double obcheckings = 1540.39;
+		double obsavings = 1000.00;
+		double obcreditcard = 549.20;
+
+		String x = input.nextLine();
+		if (x.contains("Credit Card")) {
+			System.out.println("T");
+			if (x.contains("Withdrawal")) {
+				System.out.println("Y");
+				Scanner i = new Scanner (x);
+				obcheckings = obcheckings - i.nextDouble();
+			}
+		}
+
+		System.out.println(obcheckings);
+
+	/*	while (input.hasNextDouble()) {
+			input.next();
+			if (input.hasNextLine(Checkings));
+			if else ("Withdrawal");
+			obcheckings -= input.nextDouble();
+			else ("Deposit");
+			obcheckings += input.nextDouble();
+
+			else if (input.hasNextLine(Savings));
+			else ("Deposit");
+			obsavings += input.nextDouble();
+
+			else (input.hasNextLine(Credit));
+		input.next();
+		else ("Withdrawals");
+		obcreditcard -= input.nextDouble();
+
+		}*/
+
+	/*}
+	System.out.println("Checkings Ending Balance: ");
+	System.out.println("Savings Ending Balance: ");
+	System.out.println("Credit Card Ending Balance: ");
+*/
+}
+}
