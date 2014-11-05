@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+/**
+ * 
+ * @author Alyssa Morales <amorales@skidmore.edu>
+ *
+ */
+public class YankeesData {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws FileNotFoundException { 
+		
+		int numLines = 0;
+		Scanner input = new Scanner(new File("src/YankeesResults.txt"));
+		
+		while (input.hasNextLine()) {
+			input.nextLine();
+			numLines++;
+		} { 
+			System.out.println("Number of Lines: " + numLines);
+		}
+		input.close();
+		
+		String[] date = new String [numLines];
+		String[] versus = new String [numLines];
+		String[] score = new String [numLines];
+		String[] type = new String [numLines];
+
+		
+		
+	}
+}

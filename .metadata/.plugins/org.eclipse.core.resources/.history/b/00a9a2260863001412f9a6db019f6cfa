@@ -1,0 +1,77 @@
+import java.io.*;
+import java.util.*;
+/**
+ * 
+ * @author Alyssa Morales <amorales@skidmore.edu>
+ *
+ */
+public class YankeesData {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws FileNotFoundException { 
+
+		int numLines = 0;
+		Scanner input = new Scanner(new File("src/YankeesResults"));
+
+		while (input.hasNextLine()) {
+			input.nextLine();
+			numLines++;
+		} { 
+			System.out.println("Number of Lines: " + numLines);
+		}
+		input.close();
+
+				
+		String[] date = new String [numLines];
+		String[] versus = new String [numLines];
+		String[] score = new String [numLines];
+		String[] type = new String [numLines];
+
+		int i = 0;
+		
+		input = new Scanner (new File("src/YankeesResults"));
+		while (input.hasNext()){
+	
+		date [i] = input.next();
+
+
+		versus [i] = input.next();
+		if (versus [i].equals("Tampa") || (versus [i].equals("Kansas"))) {
+			versus [i] = versus[i] + " " + input.next();
+		}else if (versus[i].equals("Chi.")) {
+			versus [i] = versus [i] + " " + input.next() + " " + input.next();
+		}
+
+
+		score[i] = input.next();
+		if (score[i].equals("W") || (score[i].equals("L"))){
+			score[i] = score[i] + " " + input.next();
+		}
+
+
+		type[i] = input.next();
+		if (type[i].equals("Regular")) {
+			type[i] = type[i] + " " + input.next();
+		}
+	
+		
+		i++;
+		}
+		input.close();
+
+
+		//Analyze of data
+		System.out.println("Who did the Yankees play against on August 8th?");
+		System.out.println("How many games have the Yankees won?");
+		System.out.println("How many times did the Yankees play Toronto?");
+		System.out.println("What was the score on September 11th?");
+		
+		Match first = new Match("may", "boston", "zero", "all-star");
+		if(first.getDate().equals("may")){
+			System.out.println(first.getVersus());
+		}
+	}
+	
+}

@@ -1,0 +1,11 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Match [] b = Methods.init();
+		System.out.println(Methods.ScoreOn("9/11/14", b));
+	}
+
+}

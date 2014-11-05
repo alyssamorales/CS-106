@@ -1,0 +1,25 @@
+//For file operations
+import java.io.FileNotFoundException;
+
+/**
+ * 
+ * Contains a program that uses input of a file to analyze .
+ * 
+ * @see Building Java Programs (Chapter 6)
+ * @author Alyssa Morales <amorales@skidmore.edu>
+ * 
+ */
+
+public class Main {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+
+
+		Match [] b = Methods.init();
+		System.out.println("What was the score September 11th?");
+		System.out.println(Methods.ScoreOn("9/11/14", b));
+
+		System.out.println(Methods.HowMany("Toronto", b));
+	}}
+

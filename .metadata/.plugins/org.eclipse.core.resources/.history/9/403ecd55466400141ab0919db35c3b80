@@ -1,0 +1,77 @@
+import java.io.*;
+import java.util.*;
+/**
+ * 
+ * @author Alyssa Morales <amorales@skidmore.edu>
+ *
+ */
+public class YankeesData {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws FileNotFoundException { 
+
+		int numLines = 0;
+		Scanner input = new Scanner(new File("src/YankeesResults"));
+
+		while (input.hasNextLine()) {
+			input.nextLine();
+			numLines++;
+		} { 
+			System.out.println("Number of Lines: " + numLines);
+		}
+		input.close();
+
+				
+		String[] date = new String [numLines];
+		String[] versus = new String [numLines];
+		String[] score = new String [numLines];
+		String[] type = new String [numLines];
+
+		int i = 0;
+		
+		input = new Scanner (new File("src/YankeesResults"));
+		while (input.hasNext()){
+	
+		String date = input.next();
+
+
+		String versus = input.next();
+		if (versus.equals("Tampa") || (versus.equals("Kansas"))) {
+			versus = versus+ " " + input.next();
+		}else if (versus.equals("Chi.")) {
+			versus = versus  + " " + input.next() + " " + input.next();
+		}
+
+
+		String score = input.next();
+		if (score.equals("W") || (score.equals("L"))){
+			score = score + " " + input.next();
+		}
+
+
+		String type = input.next();
+		if (type.equals("Regular")) {
+			type = type + " " + input.next();
+		}
+	
+		
+		i++;
+		}
+		input.close();
+
+
+		//Analyze of data
+		System.out.println("Who did the Yankees play against on August 8th?");
+		System.out.println("How many games have the Yankees won?");
+		System.out.println("How many times did the Yankees play Toronto?");
+		System.out.println("What was the score on September 11th?");
+		
+		Match first = new Match("August 8", "boston", "zero", "all-star");
+		if(first.getDate().equals("may")){
+			System.out.println(first.getVersus());
+		}
+	}
+	
+}

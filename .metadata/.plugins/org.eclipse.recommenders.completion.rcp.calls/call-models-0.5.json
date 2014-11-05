@@ -9,5 +9,15 @@
     "coordinate": "jre:jre:zip:call:1.0.0",
     "location": "/opt/jdk1.7.0_67/jre/lib/rt.jar",
     "status": "RESOLVED"
+  },
+  "/students/home/amorales/CS-106/Project 4/src": {
+    "location": "/students/home/amorales/CS-106/Project 4/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/students/home/amorales/CS-106/Project 4/src\u0027. Skipped."
+  },
+  "/students/home/amorales/CS-106/Project 5/src": {
+    "location": "/students/home/amorales/CS-106/Project 5/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/students/home/amorales/CS-106/Project 5/src\u0027. Skipped."
   }
 }

@@ -1,0 +1,92 @@
+import java.io.*;
+import java.util.*;
+/**
+ * 
+ * @author Alyssa Morales <amorales@skidmore.edu>
+ *
+ */
+public class YankeesData {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws FileNotFoundException { 
+
+		int numLines = 0;
+		Scanner input = new Scanner(new File("src/YankeesResults"));
+
+		while (input.hasNextLine()) {
+			input.nextLine();
+			numLines++;
+		} { 
+			System.out.println("Number of Lines: " + numLines);
+		}
+		input.close();
+
+		Match [] data = new Match [numLines];
+		int i = 0;
+		
+		input = new Scanner (new File("src/YankeesResults"));
+		while (input.hasNext()){
+	
+		String initDate = input.next();
+
+
+		String initVersus = input.next();
+		if (initVersus.equals("Tampa") || (initVersus.equals("Kansas"))) {
+			initVersus = initVersus+ " " + input.next();
+		}else if (versus.equals("Chi.")) {
+			initVersus = initVersus  + " " + input.next() + " " + input.next();
+		}
+
+
+		String initScore = input.next();
+		if (initScore.equals("W") || (initScore.equals("L"))){
+			initScore = initScore + " " + input.next();
+		}
+
+
+		String initType = input.next();
+		if (initType.equals("Regular")) {
+			initType = initType + " " + input.next();
+		}
+	
+		Match temp= new Match (initDate, initVersus, initScore, initType);
+		data [i] = temp;
+		i++;
+		}
+		input.close();
+
+		Match first = new Match("8/8/14", "Boston", "W 4-2", "Regular Season");
+		if(first.getDate().equals("8/8/14")){
+			System.out.println(first.getVersus());
+		}
+		
+		Match second = new Match("August 8", "Boston", "Zero", "Regular Season");
+		if (second.getScore().equals("W")){
+			System.out.println(second.getScore());
+		}
+		
+		Match third = new Match ("August 8", "Boston", "Zero", "Regular Season");
+		if (third.getVersus().equals("Toronto")){
+			System.out.println(third.getVersus());
+		}
+		
+		Match fourth = new Match ("August 8", "Boston", "Zero", "Regular Season");
+		if (fourth.getDate().equals("9/11/14")){
+			System.out.println(fourth.getScore());
+		}
+
+		//Analyze of data
+		System.out.println("Who did the Yankees play against on August 8th?" + first.getVersus());
+		System.out.println("How many games have the Yankees won?");
+		System.out.println("How many times did the Yankees play Toronto?");
+		System.out.println("What was the score on September 11th?");
+		
+
+		}
+		
+		
+	}
+	
+

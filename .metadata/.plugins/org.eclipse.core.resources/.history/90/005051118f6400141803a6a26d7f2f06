@@ -1,0 +1,84 @@
+//For file operations
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+
+/**
+ * This is a class with 3 methods that interact with the Main method 
+ * 
+ */
+
+
+public class Methods {
+
+	public static Match[] init() throws FileNotFoundException{
+		//Initializes 
+		int numLines = 0;
+		//Reads input file
+		Scanner input = new Scanner(new File("src/YankeesResults"));
+
+		//This loop goes through each line and counts how many lines are in the file
+		while (input.hasNextLine()) {
+			input.nextLine();
+			numLines++;
+		} { 	
+			System.out.println("Number of Lines: " + numLines);
+		}
+		input.close();
+
+		Match [] data = new Match [numLines];
+		int i = 0;
+
+		input = new Scanner (new File("src/YankeesResults"));
+		while (input.hasNext()){
+
+			String initDate = input.next();
+
+
+			String initVersus = input.next();
+			if (initVersus.equals("Tampa") || (initVersus.equals("Kansas"))) {
+				initVersus = initVersus+ " " + input.next();
+			}else if (initVersus.equals("Chi.")) {
+				initVersus = initVersus  + " " + input.next() + " " + input.next();
+			}
+
+
+			String initScore = input.next();
+			if (initScore.equals("W") || (initScore.equals("L"))){
+				initScore = initScore + " " + input.next();
+			}
+
+
+			String initType = input.next();
+			if (initType.equals("Regular")) {
+				initType = initType + " " + input.next();
+			}
+
+			Match temp= new Match (initDate, initVersus, initScore, initType);
+			data [i] = temp;
+			i++;
+		}
+		return data;
+	}
+	public static String ScoreOn (String Date, Match []a){
+		for(int i=0; i <a.length; i++){
+			if (a[i].getDate().equals(Date)){
+				return "On " + Date + " the score was " + a[i].getScore() + ".";
+
+			}	
+		}
+		return ("Score was not found.");
+	}
+
+	public static String HowMany (String Versus, Match []a){
+		int tally = 0;
+		for(int i=0; i <a.length; i++){
+			if (a[i].getVersus().equals(Versus)){
+				tally ++;
+			}	
+		}
+		return "The Yankees have played against " + Versus + " " + tally + " times.";
+	}
+}
+

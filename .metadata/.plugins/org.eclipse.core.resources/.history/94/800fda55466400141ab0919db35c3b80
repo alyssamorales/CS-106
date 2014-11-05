@@ -1,0 +1,67 @@
+
+public class ex {
+
+	private String date;
+	private String accountType;
+	private String transactionType;
+	private double amount;
+	
+
+	public ex(String initDate, String initAccountType, String initTransactionType, double initAmount) {
+		
+		/* Validate that account type is one of the registered types. */
+		if (!initAccountType.equalsIgnoreCase("Checking")
+			&& !initAccountType.equalsIgnoreCase("Savings")
+			&& !initAccountType.equalsIgnoreCase("Credit Card")
+		) {
+			throw new IllegalArgumentException();
+		}
+		
+		/* Validate that transaction type is one of the registered types. */
+		if (!initTransactionType.equalsIgnoreCase("Deposit")
+			&& !initTransactionType.equalsIgnoreCase("Withdrawal")
+			&& !initTransactionType.equalsIgnoreCase("Opening Balance")
+		) {
+			throw new IllegalArgumentException();
+		}
+		
+		/* Set variables. */
+		this.date = initDate;
+		this.accountType = initAccountType;
+		this.transactionType = initTransactionType;
+		this.amount = initAmount;
+	}
+	
+	
+	public double getAmount() {
+		
+		/* If the transaction type is a withdrawal, return the amount as negative. */
+		if (this.transactionType.equalsIgnoreCase("Withdrawal")) {
+			return -1 * this.amount;
+		}
+		return this.amount;
+	}
+	
+	public boolean isChecking() {
+		return (this.accountType.equalsIgnoreCase("Checking"));
+	}
+	
+	public boolean isCreditCard() {
+		return (this.accountType.equalsIgnoreCase("Credit Card"));
+	}
+
+	public boolean isSavings() {
+		return (this.accountType.equalsIgnoreCase("Savings"));
+	}
+
+
+	
+	/**
+	 * A method to convert this object to a String.
+	 * 
+	 * @return String The stringified object.
+	 */
+	public String toString() {
+		return this.date + "\t" + this.accountType + "\t" + this.transactionType + "\t" + this.amount;
+	}
+}
