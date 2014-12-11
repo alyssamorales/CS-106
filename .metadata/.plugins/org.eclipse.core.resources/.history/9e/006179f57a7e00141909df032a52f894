@@ -1,0 +1,60 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+
+public class Methods {
+
+	public static Match[] init () throws FileNotFoundException{
+		
+		int numLine = 0;
+		Scanner input = new Scanner (new File ("src/ExchangeRate.txt"));
+		
+		while (input.hasNextLine()) {
+			input.nextLine();
+			numLine++;
+		}
+		input.close();
+		String [] currency1 = new String [numLine];
+		String [] currency2 = new String [numLine];
+		double [] exchangerate = new double [numLine];
+		
+		Match [] data = new Match [numLine];
+		int i = 0;
+		input = new Scanner (new File("src/ExchangeRate.txt"));
+		while (input.hasNext()) {
+
+			currency1 [i] = input.next();
+			//System.out.println(currency1[i]);
+			currency2 [i] = input.next();
+			//System.out.println(currency2[i]);
+			exchangerate[i] = input.nextDouble();
+			//System.out.println(exchangerate[i]);
+			i++;
+		}
+		input.close();
+		return data;
+
+	}
+
+public static String Connection1 (String currency1, currency2, Match []a){
+	for(int i=0; i <a.length; i++){
+		if (a[i].getCurrency1().equals(currency1)){
+			return "Convert from" + currency1 + " to " + a[i].getCurrency2() + ".";
+
+		}if (a[i].getCurrency2().equals(currency2)){
+			return "On " + currency2 + " the exchange rate is " + a[i].getExchangeRate() + ".";	
+	}
+	return ("Could not find.");
+	}}
+//public static String Connection2 (String currency2, Match []a){
+	//for(int i=0; i <a.length; i++){
+		//if (a[i].getCurrency2().equals(currency2)){
+			//return "On " + currency2 + " the exchange rate is " + a[i].getExchangeRate() + ".";
+
+		//}	
+	//}
+	//return ("Could not find.");
+
+
+

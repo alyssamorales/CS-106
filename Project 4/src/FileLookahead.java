@@ -55,7 +55,7 @@ public class FileLookahead {
 
 
 			dates [i] = input.next();
-
+		
 			//System.out.println(dates[i]);
 
 			accounts [i] = input.next();
@@ -108,72 +108,6 @@ public class FileLookahead {
 				}
 			}
 
-
-
-
-
-			/*
-				// Skips the first 3 lines of input on file (opening balances)
-				{String x = input.nextLine();
-				x = input.nextLine();
-				x = input.nextLine();
-
-				// loops each line for the following if/else statements
-				while (input.hasNextLine()) {
-					x = input.nextLine();
-
-					if (x.contains("Checking")) {
-						if (x.contains("Withdrawal")) {
-							// Open a scanner
-							Scanner n = new Scanner(x);
-							// Sets Strings = to "i.next();" and double = to
-							// "i.nextDouble();" to represent the next token
-							String date = n.next();
-							String typeOfAccount = n.next();
-							String typeOfTransaction = n.next();
-							double amount = n.nextDouble();
-							// Withdrawals must be negative
-							checkings1 = checkings1 - amount;
-							// Close scanner
-							n.close();
-						} else if (x.contains("Deposit")) {
-							Scanner n = new Scanner(x);
-							String date = n.next();
-							String typeOfAccount = n.next();
-							String typeOfTransaction = n.next();
-							double amount = n.nextDouble();
-							// Deposits must be positive
-							checkings1 = checkings1 + amount;
-							n.close();
-						}
-					}// Savings only Deposits (basically copy Checking's "else if")
-					else if (x.contains("Savings")) {
-						if (x.contains("Deposit")) {
-							Scanner n = new Scanner(x);
-							String date = n.next();
-							String typeOfAccount = n.next();
-							String typeOfTransaction = n.next();
-							double amount = n.nextDouble();
-							savings = savings + amount;
-							n.close();
-						}
-
-					}// Credit Card only Withdrawals (basically copy Checking's "if")
-					else if (x.contains("Credit Card")) {
-						if (x.contains("Withdrawal")) {
-							Scanner n = new Scanner(x);
-							String date = n.next();
-							String typeOfAccount = n.next();
-							// add extra string because of the extra word "card"
-							String extraword = n.next();
-							String typeOfTransaction = n.next();
-							double amount = n.nextDouble();
-							credit = credit - amount;
-							n.close();
-						}
-					}
-				}
-			 */
 			// Prints out ending balances of accounts
 			System.out.println("Checkings Ending Balance: " + checkings1);
 			System.out.println("Savings Ending Balance: " + savings1);

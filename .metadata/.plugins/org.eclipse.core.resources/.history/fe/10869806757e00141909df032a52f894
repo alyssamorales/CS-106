@@ -1,0 +1,62 @@
+import java.util.*;
+import java.io.FileNotFoundException;
+
+public class currencyConverter {
+
+	public static void main(String[] args) 
+	throws FileNotFoundException {
+		
+		Match [] a = Methods.init();
+		
+		Scanner console = new Scanner (System.in);
+		double number = 1; number++;
+		System.out.println("Want to convert a currency? Here's a Currency Converter!");
+		System.out.println();
+		System.out.println(Methods.Connection1("9/11/14", a));
+		
+		System.out.println("How much do you want to convert? Enter amount.");
+		System.out.println();
+		String s1;
+		do {
+			s1 = console.nextLine();
+		} while (!s1.equals(number));
+		
+		System.out.println("What currency do you want to convert from?");
+		System.out.println("Please choose from USD, EUR, GBP, INR, AUD, CAD, ZAR, NZD, & JPN.");
+		System.out.println();
+		String s2;
+		do {
+			s2 = console.nextLine();
+		} while (!s2.equalsIgnoreCase("USD")
+			&& !s2.equalsIgnoreCase("EUR")
+			&& !s2.equalsIgnoreCase("GBP")
+			&& !s2.equalsIgnoreCase("INR")
+			&& !s2.equalsIgnoreCase("AUD")
+			&& !s2.equalsIgnoreCase("CAD")
+			&& !s2.equalsIgnoreCase("ZAR")
+			&& !s2.equalsIgnoreCase("NZD")
+			&& !s2.equalsIgnoreCase("JPN"));
+		System.out.println(Methods.Connection1("9/11/14", a));
+		
+		
+		System.out.println("What currency do you want to convert to?");
+		System.out.println("Please choose from USD, EUR, GBP, INR, AUD, CAD, ZAR, NZD, & JPN.");
+		System.out.println();
+		String s3;
+		do {
+			s3 = console.nextLine();
+		} while (!s3.equalsIgnoreCase("USD")
+			&& !s3.equalsIgnoreCase("EUR")
+			&& !s3.equalsIgnoreCase("GBP")
+			&& !s3.equalsIgnoreCase("INR")
+			&& !s3.equalsIgnoreCase("AUD")
+			&& !s3.equalsIgnoreCase("CAD")
+			&& !s3.equalsIgnoreCase("ZAR")
+			&& !s3.equalsIgnoreCase("NZD")
+			&& !s3.equalsIgnoreCase("JPN"));
+		System.out.println(Methods.Connection2("9/11/14", a));
+		
+		
+	}
+
+}

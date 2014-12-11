@@ -1,0 +1,60 @@
+//This is to locate the file
+import java.io.File;
+//throws exception if the file is not found
+import java.io.FileNotFoundException;
+//For scanner
+import java.util.Scanner;
+
+
+public class Methods {
+
+	public static Match[] init () throws FileNotFoundException{
+
+		int numLine = 0;
+		//Goes into the file ExchangeRate.txt
+		Scanner input1 = new Scanner (new File ("src/ExchangeRate.txt"));
+
+		//while there is another line, pass through
+		while (input1.hasNextLine()) {
+			input1.nextLine();
+			numLine++; //go through all 72 lines
+		}
+
+		input1.close();
+		
+		
+		Match [] data = new Match [numLine];
+		int i = 0;
+		Scanner input = new Scanner (new File("src/ExchangeRate.txt"));
+
+		//while there is data... 
+		while (input.hasNext()) {
+			String curr1 = input.next(); //Set curr1 to the first input on the certain line
+			String curr2 = input.next(); //Set curr2 to the second input on that same line
+			double ex = input.nextDouble(); //Set ex to the third input on the same line
+			//Sets currency2, currency2, and the exchange rate into an array
+			data[i] = new Match(curr1, curr2, ex);
+			i++; //increments "i"
+		}
+		input.close();
+		return data;
+
+	}
+
+	public static double Connection1 (String currency1, String currency2, Match []a){
+		double exchangeRate = 0.0;
+		for(int i=0; i <a.length; i++){
+			//If you have both currencies...
+			if (a[i].getCurrency1().equalsIgnoreCase(currency1) && a[i].getCurrency2().equalsIgnoreCase(currency2)){
+				//get the exchange rathe
+				exchangeRate = a[i].getExchangeRate();	
+			}
+		}
+		return exchangeRate;
+		
+	}
+}
+
+
+
+

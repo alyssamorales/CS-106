@@ -1,0 +1,59 @@
+import java.io.*;
+import java.util.*;
+
+public class currencyConverter {
+
+	public static void main(String[] args) 
+	throws FileNotFoundException {
+		
+		Scanner console = new Scanner (System.in);
+		double number = 1; number++;
+		System.out.println("Want to convert a currency? Here's a Currency Converter!");
+		System.out.println();
+		
+		System.out.println("How much do you want to convert? Enter amount.");
+		System.out.println();
+		String s;
+		do {
+			s = console.nextLine();
+		} while (!s.equals(number));
+		
+		System.out.println("What currency do you want to convert from?");
+		System.out.println("Please choose from USD, EUR, GBP, INR, AUD, CAD, ZAR, NZD, & JPN.");
+		System.out.println();
+		
+		System.out.println("What currency do you want to convert to?");
+		System.out.println("Please choose from USD, EUR, GBP, INR, AUD, CAD, ZAR, NZD, & JPN.");
+		System.out.println();
+		
+		int numLine = 0;
+		Scanner input = new Scanner (new File ("src/ExchangeRate.txt"));
+		
+		while (input.hasNextLine()) {
+			input.nextLine();
+			numLine++;
+		}
+		input.close();
+		
+		String [] currency1 = new String [numLine];
+		String [] currency2 = new String [numLine];
+		double [] exchangerate = new double [numLine];
+		
+		int i = 0;
+		input = new Scanner (new File("src/ExchangeRate.txt"));
+		while (input.hasNext()) {
+
+
+			currency1 [i] = input.next();
+			//System.out.println(currency1[i]);
+			currency2 [i] = input.next();
+			//System.out.println(currency2[i]);
+			exchangerate[i] = input.nextDouble();
+			//System.out.println(exchangerate[i]);
+			i++;
+		}
+		input.close();
+
+	}
+
+}

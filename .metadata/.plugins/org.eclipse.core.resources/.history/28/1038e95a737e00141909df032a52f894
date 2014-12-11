@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class currencyConverter {
+
+	public static void main(String[] args) 
+	throws FileNotFoundException {
+		
+		Scanner console = new Scanner (System.in);
+		double number = 1; number++;
+		System.out.println("Want to convert a currency? Here's a Currency Converter!");
+		System.out.println();
+		
+		System.out.println("How much do you want to convert? Enter amount.");
+		System.out.println();
+		String s;
+		do {
+			s = console.nextLine();
+		} while (!s.equals(number));
+		
+		System.out.println("What currency do you want to convert from?");
+		System.out.println("Please choose from USD, EUR, GBP, INR, AUD, CAD, ZAR, NZD, & JPN.");
+		System.out.println();
+		
+		System.out.println("What currency do you want to convert to?");
+		System.out.println("Please choose from USD, EUR, GBP, INR, AUD, CAD, ZAR, NZD, & JPN.");
+		System.out.println();
+		
+		
+	}
+
+}

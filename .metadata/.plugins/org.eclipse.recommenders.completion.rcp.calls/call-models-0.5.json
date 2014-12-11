@@ -19,5 +19,10 @@
     "location": "/students/home/amorales/CS-106/Project 5/src",
     "status": "UNRESOLVED",
     "error": "No class path info available for \u0027/students/home/amorales/CS-106/Project 5/src\u0027. Skipped."
+  },
+  "/students/home/amorales/CS-106/Final Project/src": {
+    "location": "/students/home/amorales/CS-106/Final Project/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/students/home/amorales/CS-106/Final Project/src\u0027. Skipped."
   }
 }
