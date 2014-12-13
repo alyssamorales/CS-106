@@ -12,6 +12,12 @@ import java.util.Scanner;
 
 public class Methods {
 
+	/**
+	 * This method goes through the file and puts it into arrays
+	 * 
+	 * @return returns data
+	 * @throws FileNotFoundException just in case file is nonexistent or can't be found
+	 */
 	public static Match[] init () throws FileNotFoundException{
 
 		int numLine = 0;
@@ -46,8 +52,14 @@ public class Methods {
 
 	}
 
-	// This method gets currency1 and currency2 in order to get exchangerate
-	public static double Connection1 (String currency1, String currency2, Match []a){
+	/**
+	 * This method gets currency1 and currency2 in order to get exchangerate
+	 * @param currency1
+	 * @param currency2
+	 * @param a
+	 * @return returns exchangerate
+	 */
+	public static double connection1 (String currency1, String currency2, Match []a){
 		double exchangeRate = 0.0;
 		for(int i=0; i <a.length; i++){
 			//If you have both currencies...
